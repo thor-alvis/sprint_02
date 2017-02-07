@@ -1,1 +1,36 @@
 /**/
+.form-control {
+  background-color: red;
+  color: white;
+}
+
+.content-img {
+  border: 5px solid red;
+  width: 100%;
+}
+
+.content-text {
+  border: 5px solid red;
+}
+
+.btn {
+  float: left;
+  border: none;
+}
+
+.content-text {
+  border: 5px solid red;
+  background: red;
+  width: 100px;
+}
+
+#grid-snap {
+  border: 5px solid red;
+  width: 40%;
+  background-color: #29e;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 4px;
+  padding: 2%;
+  margin: 5%;
+}
