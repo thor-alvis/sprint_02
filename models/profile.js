@@ -5,7 +5,7 @@ const ProfileSchema = new mongoose.Schema({
   displayName: String,
   userName: String, //gmail acc
   avatar: String, //image url
-  stories: [{type: Schema.Types.ObjectId, ref: 'Story'}],
+  // stories: [{type: Schema.Types.ObjectId, ref: 'Story'}],
   bio: String
 })
 

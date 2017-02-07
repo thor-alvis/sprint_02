@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const StorySchema = new mongoose.Schema({
-  wordBank: [String],
+  wordBank: String,
   caption: String,
   Date: Date,
   rawImage: String,
