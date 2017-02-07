@@ -12,6 +12,10 @@ router.get('/new', (req,res,next) => {
     const img_url  = JSON.parse(body).data.image_url;
     res.render('story',{img_url: img_url});
   })
+});
+
+router.get('/', (req,res,next) =>{
+
 })
 
 
