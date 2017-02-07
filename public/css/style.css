@@ -1,1 +1,5 @@
 /**/
+.form-control {
+  background-color: red;
+  color: white;
+}
