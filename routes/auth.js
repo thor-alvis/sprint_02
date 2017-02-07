@@ -29,14 +29,12 @@ router.get('/callback', (req, res, next) => {
     redirect_uri: redirect_uri,
     grant_type: 'authorization_code'
   };
-  console.log('form ===> ', form)
+  console.log('AUTH.JS > form ===> ', form)
   request.post(url, {form}, (err, response, body) => {
     const data = JSON.parse(body);
-    console.log('data ===> ' + data);
+    console.log('AUTH.JS > data ===> ' + data);
     req.session.access_token = data.access_token;
-    console.log('access token ===> ', data.access_token)
-    console.log('req.query ===>', req.query)
-    console.log('code ===>', code)
+    console.log('AUTH.JS > req.session ===> ', req.session);
     if (code === undefined) {
       res.redirect('/');
     } else {
