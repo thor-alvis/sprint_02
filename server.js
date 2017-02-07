@@ -24,10 +24,8 @@ app.set('view engine', 'hbs');
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
-// **COMMENT OUT BELOW ROUTE UNTIL CODE IS ADDED TO STORY.JS
-// app.use('/story', require('./routes/story'));
+app.use('/story', require('./routes/story'));
 app.use(require('./routes/error'));
-
 const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Listening on ${port}`);
