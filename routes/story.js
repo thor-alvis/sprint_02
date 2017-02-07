@@ -15,8 +15,23 @@ router.get('/new', (req,res,next) => {
 });
 
 router.get('/', (req,res,next) =>{
-
+  res.send('hi'); //list of all stories
 })
+
+router.post('/', (req,res,next) => {
+  // this is going to go to mongo
+  res.redirect('/');
+});
+
+router.get('/:id', (req,res,next) => {
+  // get other users stories
+  res.render('story');
+});
+
+router.delete('/:id', (req,res,next) => {
+  res.redirect('/');
+})
+
 
 
 
