@@ -32,11 +32,11 @@ router.get('/callback', (req, res, next) => {
   console.log('form ===> ', form)
   request.post(url, {form}, (err, response, body) => {
     const data = JSON.parse(body);
-    console.log('data ===> ' + data);
+    // console.log('data ===> ' + data);
     req.session.access_token = data.access_token;
-    console.log('access token ===> ', data.access_token)
-    console.log('req.query ===>', req.query)
-    console.log('code ===>', code)
+    // console.log('access token ===> ', data.access_token)
+    // console.log('req.query ===>', req.query)
+    // console.log('code ===>', code)
     if (code === undefined) {
       res.redirect('/');
     } else {
