@@ -6,3 +6,5 @@ var ExampleSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Example', ExampleSchema)
+
+
