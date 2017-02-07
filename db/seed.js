@@ -10,7 +10,7 @@ Profile
     displayName: 'Brad',
     userName: 'bkmorgan',
     avatar: 'http://placekitten.com/g/200/300',
-    stories: 'story'
+    stories: 'story',
     bio: "Hi my name is Brad, I'm here to party"
   }
 ])

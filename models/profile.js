@@ -4,8 +4,8 @@ const ProfileSchema = new mongoose.Schema({
   displayName: String,
   userName: String, //gmail acc
   avatar: String, //image url
-  stories: [StorySchema],
-  Bio: String
+  stories: String,
+  bio: String
 })
 
 const Profile = mongoose.model('Profile', ProfileSchema);
