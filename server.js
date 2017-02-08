@@ -7,6 +7,7 @@ const hbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const path = require('path');
+const socket = require('socket.io');
 const app = express();
 
 // CONFIG
@@ -26,7 +27,28 @@ app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
 app.use('/stories', require('./routes/story'));
 app.use(require('./routes/error'));
-const port = process.env.PORT || 3000
-app.listen(port, () => {
-  console.log(`Listening on ${port}`);
-});
+// const port = process.env.PORT || 3000
+// app.listen(port, () => {
+//   console.log(`Listening on ${port}`);
+// });
+const server = app.listen(3000);
+
+// WEBSOCKET
+// CALL SOCKET FUNCTION AND GIVE IT SERVER AS AN ARGUMENT
+const io = socket(server);
+
+io.sockets.on('connection', newConnection);
+
+function newConnection(socket) {
+  console.log('new connection : ' + socket.id);
+  // IF THERE IS A MESSAGE CALLED MOUSE TRIGGER THIS FUNCTION
+  socket.on('mouse', mouseMsg);
+
+  function mouseMsg(data) {
+    // WHEN THE MESSAGE COMES IN CALL FUNCTION BROADCAST.EMIT  TO SEND THE EXACT SAME MESSGE BACK OUT
+    socket.broadcast.emit('mouse', data);
+    // THIS WOULD GO TO ALL CONNECTIONS
+    // io.sockets.emit('mouse', data);
+    console.log(data);
+  }
+}
