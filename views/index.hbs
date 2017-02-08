@@ -1,30 +1,62 @@
-
-<h1>Index</h1>
-<a href='/auth/login'>Login with Google+</a>
-
-<div class="container">
-  <div class="col-lg-4">
-    <button type="button" class="btn btn-default btn-lg">
-      <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-    </button>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-right">
+    <a class="nav-item" href="/"><h1>STORRY</h1></a>
   </div>
-  <div class="col-lg-4 bg-success">
-    <h1>header</h2>
+
+
+  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+  <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <!-- This "nav-menu" is hidden on mobile -->
+  <!-- Add the modifier "is-active" to display it on mobile -->
+  <div class="nav-right nav-menu">
+    <!-- <a class="nav-item">
+      Home
+    </a>
+    <a class="nav-item">
+      Documentation
+    </a>
+    <a class="nav-item">
+      Blog
+    </a> -->
+
+    <span class="nav-item">
+      <a class="button is-primary" href='/auth/login'>
+        <span class="icon">
+          <i class="fa fa-login"></i>
+        </span>
+        <span>Login</span>
+      </a>
+    </span>
+  </div>
+</nav>
+
+
+<!-- CONTENT -->
+<div class="columns">
+  <div class="column">
+    First column
+  </div>
+  <div class="column is-two-thirds">
     <div class="content">
-    <div class="row">
-      <div class="img-responsive img-rounded" alt="Responsive image"><img class="content-img" src="http://elelur.com/data_images/mammals/elephant/elephant-03.jpg"></div>
-    </div>
-    <div class="row">
-      <div clas="content-text">
-        <!-- <div id="drag-1" class="draggable">
-          <p> You can drag one element </p>
-        </div>
-        <div id="drag-2" class="draggable">
-          <p> with each pointer </p>
-        </div> -->
+      <article class="media">
+        <figure class="media-center">
+          <p class="image">
+            <img src="{{img_url}}">
+          </p>
+        </figure>
+      </article>
+      <div class="content-text"><p class="word">text</p>
       </div>
     </div>
-    </div>
   </div>
-  <div class="col-lg-4"></div>
+  <div class="column">
+    Third column
+  </div>
 </div>

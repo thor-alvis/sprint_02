@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "acl": "^0.4.10",
     "body-parser": "^1.16.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
@@ -22,10 +21,12 @@
     "mongoose": "^4.8.1",
     "morgan": "^1.7.0",
     "passport": "^0.3.2",
+    "passport-google-oauth": "^1.0.0",
     "passport-local": "^1.0.0",
     "randomstring": "^1.1.5",
     "request": "^2.79.0",
-    "serve-favicon": "^2.3.2"
+    "serve-favicon": "^2.3.2",
+    "socket.io": "^1.7.2"
   },
   "devDependencies": {
     "standard": "^8.6.0"

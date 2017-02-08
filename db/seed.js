@@ -4,8 +4,6 @@ const Profile = require('../models/profile');
 const Story = require('../models/story');
 const wordBank = require('../models/wordbank')
 
-
-
 Profile
   .remove({})
   .then( () => {
@@ -36,21 +34,3 @@ Profile
   .then( () => {
     process.exit();
   })
-
-
-
-
-router.get('/', function(req, res,){
-  Profile.findbyId({}, function(err, data) {
-    Story.findbyId({})
-    if (err) {
-      console.log(err)
-    } else {
-
-      console.log(data)
-    }
-  })
-})
-
-
-

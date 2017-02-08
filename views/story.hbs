@@ -1,58 +1,71 @@
-<div class="container">
-  <div class="col-lg-4">
-    <div class="row">
-      <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      </button>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-      </button>
-    </div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-right">
+    <a class="nav-item" href="/"><h1>STORRY</h1></a>
   </div>
-  <div class="col-lg-4">
-    <h1>header</h2>
-    <div class="content">
-    <div class="row">
-      <div class="img-responsive img-rounded" alt="Responsive image">
-      <img src="{{img_url}}">
-    </div>
-    <div class="row">
-      <div clas="content-text">
-        <div id="drag-1" class="draggable">
-          <p class="word">1word</p>
-        </div>
-        <div id="drag-2" class="draggable">
-          <p class="word">2word</p>
-        </div>
-        <div id="drag-3" class="draggable">
-          <p class="word">3word</p>
-        </div>
-        <div id="drag-4" class="draggable">
-          <p class="word">4word</p>
-        </div>
-        <div id="drag-5" class="draggable">
-          <p class="word">5word</p>
-        </div>
-        <div id="drag-6" class="draggable">
-          <p class="word">6word</p>
-        </div>
-        <div id="drag-7" class="draggable">
-          <p class="word">7word</p>
-        </div>
-        <div id="drag-8" class="draggable">
-          <p class="word">8word</p>
-        </div>
-        <div id="drag-9" class="draggable">
-          <p class="word">9word</p>
-        </div>
-        <div id="drag-10" class="draggable">
-          <p class="word">10word</p>
+
+
+  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+  <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <!-- This "nav-menu" is hidden on mobile -->
+  <!-- Add the modifier "is-active" to display it on mobile -->
+  <div class="nav-right nav-menu">
+    <!-- <a class="nav-item">
+      Home
+    </a>
+    <a class="nav-item">
+      Documentation
+    </a>
+    <a class="nav-item">
+      Blog
+    </a> -->
+
+    <span class="nav-item">
+      <a class="button is-primary" href='/auth/login'>
+        <span class="icon">
+          <i class="fa fa-login"></i>
+        </span>
+        <span>Login</span>
+      </a>
+    </span>
+  </div>
+</nav>
+
+
+<!-- CONTENT -->
+<div class="container" id='myContainer'>
+  <div class="columns">
+    <div class="column"></div>
+    <div class="column is-half">
+      <div class="content">
+        <article class="media">
+          <figure class="media-center">
+            <p class="image">
+              <!-- <img src="{{img_url}}"> -->
+            </p>
+          </figure>
+        </article>
+        <div class="content-text">
+          <!-- <div id="drag-1" class="draggable">
+            <p class="word">1word</p>
+          </div>
+          <div id="drag-2" class="draggable">
+            <p class="word">2word</p>
+          </div>
+          <div id="drag-3" class="draggable">
+            <p class="word">3word</p>
+          </div> -->
         </div>
       </div>
     </div>
-    </div>
+    <div class="column"></div>
   </div>
-  <div class="col-lg-4"></div>
 </div>
+
