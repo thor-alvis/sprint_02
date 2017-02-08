@@ -1,7 +1,20 @@
 var express = require('express');
 const router = express.Router();
 const request = require('request');
+const Profile = require('../models/profile');
 
+
+router.get('/', (req,res,next) =>{
+  Profile.find({}, function (err, data) {
+    if (err) {
+      console.log(err)
+    }else {
+       console.log('data', data);
+    res.render('index',{data: data}); //list of all stories
+    }
+  })
+  // console.log(data.stories)
+});
 
 
 router.get('/new', (req,res,next) => {
@@ -14,9 +27,29 @@ router.get('/new', (req,res,next) => {
   })
 });
 
-router.get('/', (req,res,next) =>{
 
+router.post('/', (req,res,next) => {
+  // this is going to go to mongo -- share button
+  res.redirect('/');
+});
+
+router.get('/:id', (req,res,next) => {
+  // get other users stories
+  res.render('story');
+});
+
+router.delete('/:id', (req,res,next) => {
+  var id = req.body.id;
+  Profile.findByIdAndRemove(id, (err, data) => {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log('story deleted');
+    }
+  res.redirect('/');
+  })
 })
+
 
 
 
