@@ -9,8 +9,8 @@ const morgan = require('morgan');
 const path = require('path');
 
 // const socket = require('socket.io');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+// const passport = require('passport');
+// const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 const app = express();
 
@@ -22,8 +22,8 @@ app.use(favicon(path.join(__dirname, 'public/favicon.ico')));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(session({secret: 'keyboard cat', resave: false, saveUninitialized: true}));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'main', layoutsDir: path.join(__dirname, 'views/layouts/')}));
 app.set('view engine', 'hbs');
 
