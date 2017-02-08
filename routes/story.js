@@ -9,10 +9,12 @@ router.get('/', (req,res,next) =>{
     if (err) {
       console.log(err)
     }else {
-      console.log(data);
+       console.log('data', data);
     res.render('index',{data: data}); //list of all stories
-  }
-})});
+    }
+  })
+  // console.log(data.stories)
+});
 
 
 router.get('/new', (req,res,next) => {
@@ -37,7 +39,15 @@ router.get('/:id', (req,res,next) => {
 });
 
 router.delete('/:id', (req,res,next) => {
+  var id = req.body.id;
+  Profile.findByIdAndRemove(id, (err, data) => {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log('story deleted');
+    }
   res.redirect('/');
+  })
 })
 
 
