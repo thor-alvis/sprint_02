@@ -6,15 +6,16 @@ var socket;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(51);
+  stroke(7);
 
   socket = io.connect('http://localhost:3000');
   socket.on('mouse', newDrawing);
 }
 
 function newDrawing(data) {
-  noStroke();
+  // noStroke();
   fill(0, 0, 100);
-  ellipse(data.x, data.y, 60, 60);
+  line(data.x, data.y, pmouseX, pmouseY);
 }
 
 function mouseDragged() {
@@ -27,9 +28,9 @@ function mouseDragged() {
 
   socket.emit('mouse', data);
 
-  noStroke();
+  // noStroke();
   fill(255);
-  ellipse(mouseX, mouseY, 60, 60);
+  line(mouseX, mouseY, pmouseX, pmouseY);
 }
 
 function draw() {
