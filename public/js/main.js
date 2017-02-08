@@ -39,7 +39,11 @@ function dragEnd(event){
 };
 
 function readDropZone(){
+var caption = [];
   for ( var i = 0; i < _('drop-zone').children.length; i ++ ) {
-    alert( _('drop-zone').children[i].id + ' is in the dropzone' );
+    // console.log( _('drop-zone').children[i].id + ' is in the dropzone' );
+    caption.push(_('drop-zone').children[i].id);
   };
+  console.log(caption);
+  _('app-status').innerHTML=caption;
 };

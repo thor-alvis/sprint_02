@@ -7,13 +7,12 @@ const Profile = require('../models/profile');
 router.get('/', (req,res,next) =>{
   Profile.find({}, function (err, data) {
     if (err) {
-      console.log(err)
-    }else {
+      next(err)
+    } else {
        console.log('data', data);
     res.render('index',{data: data}); //list of all stories
     }
   })
-  // console.log(data.stories)
 });
 
 
