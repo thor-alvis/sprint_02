@@ -2,9 +2,12 @@
 // THERE ARE TWO INSTANCES OF THE SAME SKETCH ***************
 
 var socket;
+var myCanvas;
+
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  myCanvas = createCanvas(windowWidth, windowHeight);
+  myCanvas.parent('myContainer');
   background(51);
   stroke(7);
 
