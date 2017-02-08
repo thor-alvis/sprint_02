@@ -11,8 +11,7 @@ Profile
       wordBank: wordBank,
       caption: 'Uh-Oh SpaghettiOs',
       Date: '02/06/2017',
-      rawImage: 'http://www.funcage.com/funnypicture.php?image=photos/pics-fbu6b.jpg',
-      title: 'Handling it'
+      rawImage: 'http://www.funcage.com/funnypicture.php?image=photos/pics-fbu6b.jpg'
     });
     return story.save();
   })
