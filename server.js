@@ -31,24 +31,30 @@ app.use(require('./routes/error'));
 // app.listen(port, () => {
 //   console.log(`Listening on ${port}`);
 // });
-const server = app.listen(3000);
+
+
+
+
+// FOR WEBSOCKET =========================================================
+// const server = app.listen(3000);
 
 // WEBSOCKET
 // CALL SOCKET FUNCTION AND GIVE IT SERVER AS AN ARGUMENT
-const io = socket(server);
-
-io.sockets.on('connection', newConnection);
-
-function newConnection(socket) {
-  console.log('new connection : ' + socket.id);
-  // IF THERE IS A MESSAGE CALLED MOUSE TRIGGER THIS FUNCTION
-  socket.on('mouse', mouseMsg);
-
-  function mouseMsg(data) {
-    // WHEN THE MESSAGE COMES IN CALL FUNCTION BROADCAST.EMIT  TO SEND THE EXACT SAME MESSGE BACK OUT
-    socket.broadcast.emit('mouse', data);
-    // THIS WOULD GO TO ALL CONNECTIONS
-    // io.sockets.emit('mouse', data);
-    console.log(data);
-  }
-}
+// const io = socket(server);
+//
+// io.sockets.on('connection', newConnection);
+//
+// function newConnection(socket) {
+//   console.log('new connection : ' + socket.id);
+//   // IF THERE IS A MESSAGE CALLED MOUSE TRIGGER THIS FUNCTION
+//   socket.on('mouse', mouseMsg);
+//
+//   function mouseMsg(data) {
+//     // WHEN THE MESSAGE COMES IN CALL FUNCTION BROADCAST.EMIT  TO SEND THE EXACT SAME MESSGE BACK OUT
+//     socket.broadcast.emit('mouse', data);
+//     // THIS WOULD GO TO ALL CONNECTIONS
+//     // io.sockets.emit('mouse', data);
+//     console.log(data);
+//   }
+// }
+// END OF WEBSOCKET =========================================================
