@@ -53,19 +53,19 @@
           </figure>
         </article>
         <div class="content-text">
-          <!-- <div id="drag-1" class="draggable">
-            <p class="word">1word</p>
-          </div>
-          <div id="drag-2" class="draggable">
-            <p class="word">2word</p>
-          </div>
-          <div id="drag-3" class="draggable">
-            <p class="word">3word</p>
-          </div> -->
+
+          <h2 id="app-status"> app status: </h2>
+          <h1>dropzone</h1>
+          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)"></div>
+          <div class="words" id="word1" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD1</div>
+          <div class="words" id="word2" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD2</div>
+          <div class="words" id="word2" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD2</div>
+
+          <br><button onclick="readDropZone()">Publish</button>
+
         </div>
       </div>
     </div>
     <div class="column"></div>
   </div>
 </div>
-
