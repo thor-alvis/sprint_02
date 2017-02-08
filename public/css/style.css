@@ -1,94 +1,23 @@
+
+h1 {
+  font-size: 50px;
+}
+.nav-right {
+  /*border: 5px solid red;*/
+}
+.column {
+  /*border: 5px solid red;*/
+}
+
+.word {
+  text-align: center;
+}
+
+.media {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .content-text {
   background: red;
-}
-
-/*=============================================
-DRAGGING
-=============================================*/
-#drag-1, #drag-2 {
-  width: 25%;
-  height: 100%;
-  min-height: 6.5em;
-  margin: 10%;
-
-  background-color: #29e;
-  color: white;
-
-  border-radius: 0.75em;
-  padding: 4%;
-
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-}
-
-#drag-me::before {
-  content: "#" attr(id);
-  font-weight: bold;
-}
-
-/*=============================================
-DRAGGING
-=============================================*/
-
-#wordbank-dropzone {
-  height: 140px;
-}
-
-#caption-dropzone {
-  height: 80px;
-}
-
-#div1-dropzone,
-#div2-dropzone,
-#div3-dropzone,
-#div4-dropzone,
-#div5-dropzone,
-#div6-dropzone,
-#div7-dropzone,
-#div8-dropzone,
-#div9-dropzone,
-#div10-dropzone {
-  display: inline-block;
-  width: 10%;
-}
-
-.dropzone {
-  background-color: #ccc;
-  border: dashed 4px transparent;
-  border-radius: 4px;
-  margin: 10px auto 30px;
-  padding: 10px;
-  width: 80%;
-  transition: background-color 0.3s;
-  display: inline-block;
-}
-
-.drop-active {
-  border-color: #aaa;
-}
-
-.drop-target {
-  background-color: #29e;
-  border-color: #fff;
-  border-style: solid;
-}
-
-.drag-drop {
-  display: inline-block;
-  min-width: 40px;
-  padding: 2em 0.5em;
-
-  color: #fff;
-  background-color: #29e;
-  border: solid 2px #fff;
-
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-
-  transition: background-color 0.3s;
-}
-
-.drag-drop.can-drop {
-  color: #000;
-  background-color: #4e4;
 }

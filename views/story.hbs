@@ -1,89 +1,71 @@
-<div class="container">
-  <div class="col-lg-2">
-    <div class="row">
-    </div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-right">
+    <a class="nav-item" href="/"><h1>STORRY</h1></a>
   </div>
-  <div class="col-lg-8">
-    <div class="row">
-      <div class="content-img img-responsive img-rounded" alt="Responsive image">
-        <img src="{{img_url}}">
-      </div>
-      <div class="content-text"> word bank
-        <div class="row">
 
 
-          <!-- <div id="no-drop" class="draggable drag-drop"> #no-drop </div> -->
-          <div id="yes-drop" class="draggable drag-drop"> word1 </div>
-          <div id="yes-drop" class="draggable drag-drop"> word2 </div>
-          <div id="yes-drop" class="draggable drag-drop"> word3 </div>
+  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+  <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
 
-          <div id="caption-dropzone" class="dropzone">
-            #caption-dropzone
-            <div id="div1-dropzone" class="dropzone">#div1-dropzone</div>
-            <div id="div2-dropzone" class="dropzone">#div2-dropzone</div>
-            <div id="div3-dropzone" class="dropzone">#div3-dropzone</div>
-            <div id="div4-dropzone" class="dropzone">#div4-dropzone</div>
-            <div id="div5-dropzone" class="dropzone">#div5-dropzone</div>
-            <div id="div6-dropzone" class="dropzone">#div6-dropzone</div>
-            <div id="div7-dropzone" class="dropzone">#div7-dropzone</div>
-            <div id="div8-dropzone" class="dropzone">#div8-dropzone</div>
-            <div id="div9-dropzone" class="dropzone">#div9-dropzone</div>
-            <div id="div10-dropzone" class="dropzone">#div10-dropzone</div>
+  <!-- This "nav-menu" is hidden on mobile -->
+  <!-- Add the modifier "is-active" to display it on mobile -->
+  <div class="nav-right nav-menu">
+    <!-- <a class="nav-item">
+      Home
+    </a>
+    <a class="nav-item">
+      Documentation
+    </a>
+    <a class="nav-item">
+      Blog
+    </a> -->
+
+    <span class="nav-item">
+      <a class="button is-primary" href='/auth/login'>
+        <span class="icon">
+          <i class="fa fa-login"></i>
+        </span>
+        <span>Login</span>
+      </a>
+    </span>
+  </div>
+</nav>
+
+
+<!-- CONTENT -->
+<div class="container" id='myContainer'>
+  <div class="columns">
+    <div class="column"></div>
+    <div class="column is-half">
+      <div class="content">
+        <article class="media">
+          <figure class="media-center">
+            <p class="image">
+              <!-- <img src="{{img_url}}"> -->
+            </p>
+          </figure>
+        </article>
+        <div class="content-text">
+          <!-- <div id="drag-1" class="draggable">
+            <p class="word">1word</p>
           </div>
-
-
+          <div id="drag-2" class="draggable">
+            <p class="word">2word</p>
+          </div>
+          <div id="drag-3" class="draggable">
+            <p class="word">3word</p>
+          </div> -->
         </div>
       </div>
     </div>
+    <div class="column"></div>
   </div>
-  <div class="col-lg-2">
-    <div class="row">
-    </div>
-  </div>
+</div>
 
-
-<div>
-
-
-<!-- <div class="container-fluid">
-  <h1 class="header">story</h1>
-  <div class="col-lg-2">
-    <div class="row">
-      <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      </button>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-      </button>
-    </div>
-    <div class="row">
-      <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-      </button>
-    </div>
-  </div>
-  <div class="col-lg-8">
-    <div class="content">
-    <div class="row">
-      <div class="content-img img-responsive img-rounded" alt="Responsive image">
-        <img src="{{img_url}}">
-      </div>
-    </div>
-    <div class="row">
-      <div class="text-content">
-
-        <div id="no-drop" class="draggable drag-drop"> #no-drop </div>
-
-        <div id="yes-drop" class="draggable drag-drop"> #yes-drop </div>
-
-        <div id="outer-dropzone" class="dropzone">
-          #outer-dropzone
-          <div id="inner-dropzone" class="dropzone">#inner-dropzone</div>
-         </div>
-
-      </div>
-    </div>
-  <div class="col-lg-2"></div>
-</div> -->
