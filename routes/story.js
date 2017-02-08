@@ -10,8 +10,12 @@ router.get('/new', (req,res,next) => {
     console.log('body', JSON.parse(body));
     console.log('body', JSON.parse(body).data.image_url);
     const img_url  = JSON.parse(body).data.image_url;
-    res.render('newStory',{img_url: img_url});
+    res.render('story',{img_url: img_url});
   })
+});
+
+router.get('/', (req,res,next) =>{
+
 })
 
 

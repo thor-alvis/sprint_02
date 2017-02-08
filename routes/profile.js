@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
   const user = req.session.user;
-  console.log(user)
+  console.log('PROFILE.JS > user ===> ', user);
   res.render('profile', {user});
 });
 
@@ -16,7 +16,7 @@ router.get('/me', (req, res, next) => {
     url: url,
     headers: { 'authorization' : `Bearer ${access_token}`}
   }
-  // console.log('getting the profile')
+  console.log('PROFILE.JS > options ===>', options);
   request(options, (err, response, body) => {
     const user = JSON.parse(body);
     req.session.user = user;
