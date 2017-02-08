@@ -1,8 +1,57 @@
 // ==============================================================
-// DRAGULA
+// JQUERY
 // ==============================================================
+$(document).ready(function(){
+  $('#publish').click(function(e){
+    let $dropZone = $('#drop-zone').text();
+    console.log('from jquery : ', $dropZone);
+    let $caption = [];
+      for ( let i = 0; i < _('drop-zone').children.length; i ++ ) {
+        $caption.push(_('drop-zone').children[i].id);
+      };
+      console.log($caption);
+    let $data = {
+      userName: USERNAME,
+      caption: $caption,
+      img_url: GIF
+    }
+    console.log($data);
+    $.post('/', {data: $data}, function(res){
+      const $appendContent =
+      `<div class="content">
+        <article class="media">
+          <figure class="media-center">
+            <p class="image"> IMG
+              <img src="${img_url}">
+            </p>
+          </figure>
+        </article>
+        <div class="content-text">
+          <div class="words" id="word1">WORD1</div>
+          <div class="words" id="word2">WORD2</div>
+          <div class="words" id="word3">WORD3</div>
+          <div class="words" id="word4">WORD4</div>
+          <div class="words" id="word5">WORD5</div>
+          <div class="words" id="word6">WORD6</div>
+          <div class="words" id="word7">WORD7</div>
+          <div class="words" id="word8">WORD8</div>
+          <div class="words" id="word9">WORD9</div>
+          <div class="words" id="word10">WORD10</div>
+
+          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)">CAPTION : </div>
 
 
+        </div>
+
+      </div>`
+
+
+    })
+
+
+
+  })
+})
 
 // ==============================================================
 // DRAGULA - DRAG AND DROP
