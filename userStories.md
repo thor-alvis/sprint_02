@@ -15,5 +15,4 @@ As a user, first view is all stories , can like, comment  - (get /stories).
     - show bio, pic, links to past works, . BUT CANNOT EDIT OTHER PROFILES
     -user can edit own profile (get/profiles/id/edit) and (put) back
     -option to logout.
-
   
