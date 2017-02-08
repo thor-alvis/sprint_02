@@ -24,4 +24,20 @@ router.get('/me', (req, res, next) => {
   })
 });
 
+
+router.get('/:id', (req,res,next) => {
+  // grab profile of specific user
+  res.render('profile');
+});
+
+router.get('/:id/edit', (req,res,next) => {
+  // display fields to edit
+  res.render('edit');
+});
+
+router.put('/:id', (req,res,next) => {
+  // update profile in mongo
+  res.redirect('/:id')   // either redirect or render.
+})
+
 module.exports = router;
