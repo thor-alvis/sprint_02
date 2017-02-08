@@ -1,3 +1,7 @@
+.content-text {
+  background: red;
+}
+
 /*=============================================
 DRAGGING
 =============================================*/
@@ -23,15 +27,29 @@ DRAGGING
 }
 
 /*=============================================
-DRAG AND DROP
+DRAGGING
 =============================================*/
 
-#outer-dropzone {
+#wordbank-dropzone {
   height: 140px;
 }
 
-#inner-dropzone {
+#caption-dropzone {
   height: 80px;
+}
+
+#div1-dropzone,
+#div2-dropzone,
+#div3-dropzone,
+#div4-dropzone,
+#div5-dropzone,
+#div6-dropzone,
+#div7-dropzone,
+#div8-dropzone,
+#div9-dropzone,
+#div10-dropzone {
+  display: inline-block;
+  width: 10%;
 }
 
 .dropzone {
@@ -42,6 +60,7 @@ DRAG AND DROP
   padding: 10px;
   width: 80%;
   transition: background-color 0.3s;
+  display: inline-block;
 }
 
 .drop-active {

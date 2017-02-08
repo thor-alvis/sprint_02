@@ -48,7 +48,6 @@ interact('.draggable')
   window.dragMoveListener = dragMoveListener;
 
 
-
 // =============================================
 // DRAG AND DROP
 // =============================================
@@ -69,6 +68,7 @@ interact('.dropzone').dropzone({
     event.target.classList.add('drop-active');
   },
   ondragenter: function (event) {
+    console.log(event);
     var draggableElement = event.relatedTarget,
         dropzoneElement = event.target;
 
@@ -81,10 +81,10 @@ interact('.dropzone').dropzone({
     // remove the drop feedback style
     event.target.classList.remove('drop-target');
     event.relatedTarget.classList.remove('can-drop');
-    event.relatedTarget.textContent = 'Dragged out';
+    event.relatedTarget.textContent = 'Word Bank';
   },
   ondrop: function (event) {
-    event.relatedTarget.textContent = 'Dropped';
+    event.relatedTarget.textContent = 'Caption';
   },
   ondropdeactivate: function (event) {
     // remove active dropzone feedback
