@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const ProfileSchema = new mongoose.Schema({
   displayName: String,
-  userName: String, //gmail acc
+  email: String, //gmail acc
   avatar: String, //image url
   stories: [{type: Schema.Types.ObjectId, ref: 'Story'}],
   bio: String

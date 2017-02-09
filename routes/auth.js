@@ -1,6 +1,8 @@
 const express = require('express');
 const request = require('request');
 const router = express.Router();
+const Profile = require('../models/profile');
+const Story = require('../models/story');
 
 // CONFIG THE CLIENT OBJECT
 const client_id = process.env.GOOGLE_CLIENT_ID;
@@ -38,6 +40,8 @@ router.get('/callback', (req, res, next) => {
     if (code === undefined) {
       res.redirect('/');
     } else {
+      // deleted this 'profile/me' as per updated routes..
+
       res.redirect('/profile/me');
     }
   });

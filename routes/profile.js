@@ -1,6 +1,7 @@
 const express = require('express');
 const request = require('request');
 const router = express.Router();
+const Profile = require('../models/profile')
 
 router.get('/', (req, res, next) => {
   const user = req.session.user;
@@ -20,7 +21,18 @@ router.get('/me', (req, res, next) => {
   request(options, (err, response, body) => {
     const user = JSON.parse(body);
     req.session.user = user;
-    return res.redirect('/profile')
+    Profile.findOne({"email": user.emails[0].value}, (err,profile)=> {
+      if(!profile){
+      var profile1 = new Profile({
+           displayName: user.displayName,
+           email: user.emails[0].value
+           // avatar: user.image
+          })
+          profile1.save()
+      }
+    })
+      console.log('rsu=', user);
+    return res.redirect('/stories')
   })
 });
 

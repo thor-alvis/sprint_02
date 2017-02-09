@@ -92,3 +92,22 @@ interact('.dropzone').dropzone({
     event.target.classList.remove('drop-target');
   }
 });
+
+
+ var imgdata = $('#storypost').attr('src');
+ console.log('imgdata =', imgdata);
+ var data = {
+        imgdata: imgdata
+ }
+
+$('#submit').on('click', (evt) => {
+  console.log('clicked');
+  // console.log('imgdata = ', imgdata);
+  $.post('/stories', data, (err,response) => {
+    console.log('response=', response);
+
+
+  })
+})
+
+//
