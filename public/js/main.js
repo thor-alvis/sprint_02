@@ -48,23 +48,23 @@ function _(id) {
 var droppedIn = false;
 
 function dragStart(event){
-  _('app-status').innerHTML = 'dragging : ' + event.target.getAttribute('id');
+  // _('app-status').innerHTML = 'dragging : ' + event.target.getAttribute('id');
   event.dataTransfer.dropEffect = 'move';
   event.dataTransfer.setData( 'text', event.target.getAttribute('id') );
 };
 
 function dragEnter(event){
-  _('app-status').innerHTML = 'You are dragging : ' + event.target.getAttribute('id');
+  // _('app-status').innerHTML = 'You are dragging : ' + event.target.getAttribute('id');
 };
 
 function dragLeave(event){
-  _('app-status').innerHTML = 'You left : ' + event.target.getAttribute('id');
+  // _('app-status').innerHTML = 'You left : ' + event.target.getAttribute('id');
 };
 
 function dragDrop(event){
   var elmId = event.dataTransfer.getData('text');
   event.target.appendChild( _(elmId) );
-  _('app-status').innerHTML = 'Dropped ' + elmId + 'into the ' + event.target.getAttribute('id');
+  // _('app-status').innerHTML = 'Dropped ' + elmId + 'into the ' + event.target.getAttribute('id');
   // _(elmId).removeAttribute('draggable');
   // _(elmId).style.cursor = 'default';
   droppedIn='true';
@@ -72,7 +72,7 @@ function dragDrop(event){
 
 function dragEnd(event){
   if (droppedIn == false) {
-    _('app-status').innerHTML='You let the ' + event.target.getAttribute('id') + ' go';
+    // _('app-status').innerHTML='You let the ' + event.target.getAttribute('id') + ' go';
   }
 
   droppedIn = false;
@@ -106,4 +106,3 @@ var caption = [];
 // })
 
 //
-
