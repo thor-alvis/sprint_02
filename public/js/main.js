@@ -4,20 +4,22 @@
 $(document).ready(function(){
   $('#publish').click(function(e){
     let $dropZone = $('#drop-zone').text();
-    let $email = $('#email').val();
-    let $imgurl = $('#imgurl').val();
-    console.log('from jquery : ', $dropZone);
+    let $email = $('#email').text();
+    let $imgurl = $('#imgurl').attr('src');
+    console.log('from dropZone: ', $dropZone);
     let $caption = [];
       for ( let i = 0; i < _('drop-zone').children.length; i ++ ) {
         $caption.push(_('drop-zone').children[i].id);
       };
-      console.log($caption);
+      console.log('caption',$caption);
+      console.log('email', $email);
+      console.log('img_url', $imgurl);
     let $data = {
       email: $email,
       caption: $caption,
       img_url: $imgurl
     }
-    console.log($data);
+    console.log('data', $data);
     $.post('/stories', {data: $data}, function(res){
       const $appendContent =
       `<div class="content">

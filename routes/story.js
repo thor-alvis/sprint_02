@@ -49,10 +49,11 @@ router.get('/new', (req,res,next) => {
 
 router.post('/', (req,res,next) => {
   // this is going to go to mongo -- share button
-  var img_url = req.body.img_url;
-  var caption = req.body.caption;
-  var email = req.body.email;
+  var img_url = req.body.data.img_url;
+  var caption = req.body.data.caption;
+  var email = req.body.data.email;
   console.log('img_url=', img_url);
+  console.log('req.body', req.body.data)
   var story = {
     email: email,
     caption: caption,
