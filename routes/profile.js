@@ -32,6 +32,7 @@ router.get('/me', (req, res, next) => {
       }
     })
       console.log('rsu=', user);
+
        res.redirect('/stories')
   })
 });

@@ -1,18 +1,18 @@
 
 
 
-As a user, first view is all stories , can like, comment  - (get /stories).
-  user must login to do anything else. using google oauth.
+-[] As a user first view is all stories 
+-[] As a user, you will log in with Google
+-[] on first ever login, user profile will be created and stored in Mongo
+-[] once a user logs in, they will go to new story
+-[] story conists of gif, word bank, a Save button, and Delete button
+-[] save button saves to profile in mongo, adds link to top of the link list
+-[] delete button deletes that post
+-[] A reader should be able to like a story
 
-  once a user logs in, they will go to new story (get storeis new)
-  user will see a gif and a word bank, a Save Button, a REfresh Button - for new words, picture -
-    create caption, and share. -(post /stories)
-   --sharing will redirect back to main page - (get stories)
-  User will see link to all profiles of contributors
-   user will see page of all profiles (get /profiles)
-   user can click on, go to any profile - (get profiles/id)
-   on users own profile, see all attributes + delete button on each past work.
-    - show bio, pic, links to past works, . BUT CANNOT EDIT OTHER PROFILES
-    -user can edit own profile (get/profiles/id/edit) and (put) back
-    -option to logout.
+     
+
+
+
+   
   
