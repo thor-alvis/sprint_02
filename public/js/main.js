@@ -11,7 +11,7 @@ $(document).ready(function(){
       };
       console.log($caption);
     let $data = {
-      userName: USERNAME,
+      email: USERNAME,
       caption: $caption,
       img_url: GIF
     }
