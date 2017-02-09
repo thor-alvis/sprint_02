@@ -8,24 +8,14 @@
 
   <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
   <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-  <span class="nav-toggle">
+  <!-- <span class="nav-toggle">
     <span></span>
     <span></span>
     <span></span>
-  </span>
+  </span> -->
 
-  <!-- This "nav-menu" is hidden on mobile -->
-  <!-- Add the modifier "is-active" to display it on mobile -->
+
   <div class="nav-right nav-menu">
-    <!-- <a class="nav-item">
-      Home
-    </a>
-    <a class="nav-item">
-      Documentation
-    </a>
-    <a class="nav-item">
-      Blog
-    </a> -->
 
     <span class="nav-item">
 
@@ -65,32 +55,26 @@
 
 
 
-{{!-- <form action="/stories" method="POST" accept-charset="utf-8"> --}}
- <button id="submit">SUBMIT</button>
-{{!-- </form>
- --}}
-
-
-
-<div id='avatar'><img src='{{user.image.url}}'></div>
-<div id='email'>{{user.email}}</div>
-
-
 
 <!-- CONTENT -->
-<div class="container" id='myContainer'>
+<div class="container">
   <div class="columns">
+
     <div class="column"></div>
+
     <div class="column is-half">
       <div class="content">
-        <article class="media">
-          <figure class="media-center">
+        <div class="content-media">
+          <article class="media">
+            <figure class="media-center">
 
-            <p class="image"> IMG
-               <img src="{{img_url}}">
-            </p>
-          </figure>
-        </article>
+              <p class="image">
+                 <img src="{{img_url}}">
+              </p>
+            </figure>
+          </article>
+        </div>
+
         <div class="content-text">
 
           <h2 id="app-status"> app status: </h2>
@@ -111,9 +95,9 @@
           <br><button id="publish">Publish</button>
 
         </div>
-
       </div>
     </div>
+
     <div class="column"></div>
   </div>
 </div>
