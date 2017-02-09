@@ -7,21 +7,20 @@ const Profile = require('../models/profile');
 router.get('/', (req,res,next) =>{
   Profile.find({}, function (err, data) {
     if (err) {
-      console.log(err)
-    }else {
+      next(err)
+    } else {
        console.log('data', data);
     res.render('index',{data: data}); //list of all stories
     }
   })
-  // console.log(data.stories)
 });
 
 
 router.get('/new', (req,res,next) => {
   request.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC', (err, response, body) => {
     console.log('err', err);
-    console.log('body', JSON.parse(body));
-    console.log('body', JSON.parse(body).data.image_url);
+    console.log('body 1', JSON.parse(body));
+    console.log('body 2', JSON.parse(body).data.image_url);
     const img_url  = JSON.parse(body).data.image_url;
     res.render('story',{img_url: img_url});
   })
@@ -30,7 +29,11 @@ router.get('/new', (req,res,next) => {
 
 router.post('/', (req,res,next) => {
   // this is going to go to mongo -- share button
-  res.redirect('/');
+  var img_url = req.body.imgdata;
+  var caption = req.body.caption;
+  var userName = req.body.userName;
+  console.log('img_url=', img_url);
+  // res.redirect('/');
 });
 
 router.get('/:id', (req,res,next) => {
@@ -39,15 +42,15 @@ router.get('/:id', (req,res,next) => {
 });
 
 router.delete('/:id', (req,res,next) => {
-  var id = req.body.id;
-  Profile.findByIdAndRemove(id, (err, data) => {
-    if(err) {
-      console.log(err);
-    } else {
-      console.log('story deleted');
-    }
+  // var id = req.body.id;
+  // Profile.findByIdAndRemove(id, (err, data) => {
+  //   if(err) {
+  //     console.log(err);
+  //   } else {
+  //     console.log('story deleted');
+  //   }
+  // })
   res.redirect('/');
-  })
 })
 
 

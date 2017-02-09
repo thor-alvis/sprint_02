@@ -39,6 +39,16 @@
 </nav>
 
 
+
+{{!-- <form action="/stories" method="POST" accept-charset="utf-8"> --}}
+ <button id="submit">SUBMIT</button>
+{{!-- </form>
+ --}}
+
+
+
+
+
 <!-- CONTENT -->
 <div class="container" id='myContainer'>
   <div class="columns">
@@ -47,25 +57,38 @@
       <div class="content">
         <article class="media">
           <figure class="media-center">
-            <p class="image">
+
+            <p class="image"> IMG
               <!-- <img src="{{img_url}}"> -->
+           
+           //brad and kris test
+            //<p class="image">
+              //<img id='storypost' src="{{img_url}}">
             </p>
           </figure>
         </article>
         <div class="content-text">
-          <!-- <div id="drag-1" class="draggable">
-            <p class="word">1word</p>
-          </div>
-          <div id="drag-2" class="draggable">
-            <p class="word">2word</p>
-          </div>
-          <div id="drag-3" class="draggable">
-            <p class="word">3word</p>
-          </div> -->
+
+          <h2 id="app-status"> app status: </h2>
+          <div class="words" id="word1" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD1</div>
+          <div class="words" id="word2" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD2</div>
+          <div class="words" id="word3" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD3</div>
+          <div class="words" id="word4" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD4</div>
+          <div class="words" id="word5" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD5</div>
+          <div class="words" id="word6" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD6</div>
+          <div class="words" id="word7" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD7</div>
+          <div class="words" id="word8" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD8</div>
+          <div class="words" id="word9" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD9</div>
+          <div class="words" id="word10" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">WORD10</div>
+
+          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)">CAPTION : </div>
+
+          <br><button id="publish">Publish</button>
+
         </div>
+
       </div>
     </div>
     <div class="column"></div>
   </div>
 </div>
-
