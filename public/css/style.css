@@ -7,9 +7,10 @@ span {
 
 h1 {
   font-size: 50px;
+  text-align: center;
 }
-.nav-right {
-  /*border: 5px solid red;*/
+.nav-item{
+  display: block;
 }
 .column {
   /*border: 5px solid red;*/
@@ -34,9 +35,6 @@ h1 {
   margin-right: auto;
 }
 
-
-
-
 /*DRAGULA DRAG AND DROP ====================================================*/
 .words {
     display:inline-block;
@@ -47,8 +45,13 @@ h1 {
     text-align: center;
     /*cursor: move;*/
 }
+
+.words:hover{
+  /*animate*/
+}
+
 #drop-zone {
-    border: red 5px solid;
+    border: black 1px solid;
     padding: 8px;
     font-size: 18px;
 }
