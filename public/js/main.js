@@ -90,6 +90,7 @@ function dragEnd(event){
   if (droppedIn == false) {
     _('app-status').innerHTML='You let the ' + event.target.getAttribute('id') + ' go';
   }
+
   droppedIn = false;
 };
 
@@ -102,3 +103,23 @@ var caption = [];
   console.log(caption);
   _('app-status').innerHTML=caption;
 };
+
+// brad's and kris main.js testing
+//  var imgdata = $('#storypost').attr('src');
+//  console.log('imgdata =', imgdata);
+//  var data = {
+//         imgdata: imgdata
+//  }
+
+// $('#submit').on('click', (evt) => {
+//   console.log('clicked');
+//   // console.log('imgdata = ', imgdata);
+//   $.post('/stories', data, (err,response) => {
+//     console.log('response=', response);
+
+
+//   })
+// })
+
+//
+
