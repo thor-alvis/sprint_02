@@ -65,18 +65,26 @@ router.post('/', (req,res,next) => {
 
 router.get('/:id', (req,res,next) => {
   // get other users stories
-  res.render('story');
+  var id = req.params.id;
+  Story.findById(id, (err, story) => {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(id + ' story found')
+    }
+  res.render('story', {user: story});
+  })
 });
 
 router.delete('/:id', (req,res,next) => {
-  // var id = req.body.id;
-  // Profile.findByIdAndRemove(id, (err, data) => {
-  //   if(err) {
-  //     console.log(err);
-  //   } else {
-  //     console.log('story deleted');
-  //   }
-  // })
+  var id = req.params.id;
+  Story.findByIdAndRemove(id, (err, story) => {
+    if(err) {
+      console.log(err);
+    } else {
+      console.log('story deleted');
+    }
+  })
   res.redirect('/');
 })
 
