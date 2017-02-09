@@ -2,7 +2,7 @@ var express = require('express');
 const router = express.Router();
 const request = require('request');
 const Profile = require('../models/profile');
-
+const wordbank = require('../models/wordbank');
 
 router.get('/', (req,res,next) =>{
   Profile.find({}, function (err, user) {
@@ -23,7 +23,26 @@ router.get('/new', (req,res,next) => {
     console.log('body 1', JSON.parse(body));
     console.log('body 2', JSON.parse(body).data.image_url);
     const img_url  = JSON.parse(body).data.image_url;
-    res.render('story',{img_url: img_url});
+    var game_words = [];
+    // var word = wordbank[randomIndex];
+    while(game_words.length < 11){
+    var randomIndex = Math.floor(Math.random() * wordbank.length);
+    game_words.push(wordbank[randomIndex]);
+    }
+    console.log(game_words);
+    res.render('story',{img_url: img_url,
+      words1: game_words[0],
+      words2: game_words[1],
+      words3: game_words[2],
+      words4: game_words[3],
+      words5: game_words[4],
+      words6: game_words[5],
+      words7: game_words[6],
+      words8: game_words[7],
+      words9: game_words[8],
+      words10: game_words[9]
+
+    });
   })
 });
 

@@ -7,54 +7,34 @@
 
   <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
   <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
-  <span class="nav-toggle">
+  <!-- <span class="nav-toggle">
     <span></span>
     <span></span>
     <span></span>
-  </span>
+  </span> -->
 
   <!-- This "nav-menu" is hidden on mobile -->
   <!-- Add the modifier "is-active" to display it on mobile -->
   <div class="nav-right nav-menu">
-    <!-- <a class="nav-item">
-      Home
-    </a>
-    <a class="nav-item">
-      Documentation
-    </a>
-    <a class="nav-item">
-      Blog
-    </a> -->
 
     <span class="nav-item">
 
-      <a class="button is-primary" href='/auth/login'>
-        <span class="icon">
-          <i class="fa fa-login"></i>
-        </span>
-        <span>Login</span>
-      </a>
 
-      <a class="button is-primary" href='/auth/login'>
-        <span class="icon">
-          <i class="fa fa-login"></i>
-        </span>
-        <span id="avatar"><img src='{{user.image.url}}'></span>
-      </a>
 
-      <a class="button is-primary" href='/auth/login'>
-        <span class="icon">
-          <i class="fa fa-login"></i>
-        </span>
-        <span id="email">email{{user.email}}</span>
-      </a>
+      {{#if user}}
+      <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
 
-      <a class="button is-primary" href='/auth/login'>
+
+      <div class="nav-item" id="avatar"><img src='{{user.image.url}}'>avatar</div>
+
+
+      <a class="button is-primary">
         <span class="icon">
           <i class="fa fa-login"></i>
         </span>
         <span id="create">Create</span>
       </a>
+
 
       <a class="button is-primary" href='/auth/logout'>
         <span class="icon">
@@ -63,19 +43,26 @@
         <span>Logout</span>
       </a>
 
+      {{else}}
+      <a class="button is-primary" href='/auth/login'>
+        <span class="icon">
+          <i class="fa fa-login"></i>
+        </span>
+        <span>Login</span>
+      </a>
 
+      {{/if}}
 
     </span>
   </div>
+
+
+
 </nav>
 
 
 
 
-<p>Welcome, {{user.displayName}}</p>
-<div id='avatar'><img src='{{user.image.url}}'></div>
-<div id='email'>{{email}}</div>
-<a href='/auth/logout'>Logout</a>
 
 
 
@@ -83,16 +70,13 @@
 
 <!-- CONTENT -->
 <div class="columns">
-  <div class="column">
-    First column
-  </div>
+  <div class="column"></div>
   <div class="column is-two-thirds">
     <div class="content">
       <article class="media">
         <figure class="media-center">
-          <p class="image">
-            <img src="{{img_url}}" id="imgur
-            ">
+          <p class="image">IMG
+            <!-- <img src="{{img_url}}"> -->
           </p>
         </figure>
       </article>
@@ -100,7 +84,5 @@
       </div>
     </div>
   </div>
-  <div class="column">
-    Third column
-  </div>
+  <div class="column"></div>
 </div>
