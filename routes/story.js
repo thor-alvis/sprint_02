@@ -3,6 +3,7 @@ const router = express.Router();
 const request = require('request');
 const Profile = require('../models/profile');
 const wordbank = require('../models/wordbank');
+const Story = require('../models/story')
 
 router.get('/', (req,res,next) =>{
   Profile.find({}, function (err, user) {
@@ -41,7 +42,6 @@ router.get('/new', (req,res,next) => {
       words8: game_words[7],
       words9: game_words[8],
       words10: game_words[9]
-
     });
   })
 });
@@ -49,11 +49,18 @@ router.get('/new', (req,res,next) => {
 
 router.post('/', (req,res,next) => {
   // this is going to go to mongo -- share button
-  var img_url = req.body.imgdata;
+  var img_url = req.body.img_url;
   var caption = req.body.caption;
-  var userName = req.body.userName;
+  var email = req.body.email;
   console.log('img_url=', img_url);
-  // res.redirect('/');
+  var story = {
+    email: email,
+    caption: caption,
+    img_url: img_url
+  }
+  var newStory = new Story(story);
+  newStory.save();
+  res.redirect('/');
 });
 
 router.get('/:id', (req,res,next) => {
