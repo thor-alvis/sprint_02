@@ -17,6 +17,7 @@
     </div>
 
 
+    <!-- NAV -->
     <nav class="nav">
       <div class="nav-right nav-menu">
         {{#if user}}
@@ -25,36 +26,38 @@
 
         <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
 
-        <span class="nav-item">
-          <a class="button is-white" id="create" >
-            <span class="icon">
-              <i class="fa fa-plus"></i>
-            </span> create
-          </a>
-        </span>
-
-
-        <span class="nav-item">
-          <a class="button is-white" href='/auth/logout' >
+        <div class="nav-item">
+          <a class="button" href='/auth/logout' >
             <span class="icon">
               <i class="fa fa-sign-out"></i>
-            </span> logout
+            </span>
           </a>
-        </span>
+        </div>
+
+        <div class="nav-item">
+          <a class="button" id="create" >
+            <span class="icon">
+              <i class="fa fa-plus"></i>
+            </span>
+          </a>
+        </div>
+
+
 
         {{else}}
 
-        <span class="nav-item">
-          <a class="button is-white" href='/auth/login' >
+        <div class="nav-item">
+          <a class="button" href='/auth/login' >
             <span class="icon">
               <i class="fa fa-sign-in"></i>
-            </span> login
+            </span> logout
           </a>
-        </span>
+        </div>
 
         {{/if}}
       </div>
     </nav>
+    <!-- NAV END -->
 
 
   </div>
