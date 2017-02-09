@@ -7,7 +7,7 @@ const Story = require('../models/story');
 // CONFIG THE CLIENT OBJECT
 const client_id = process.env.GOOGLE_CLIENT_ID;
 const client_secret = process.env.GOOGLE_CLIENT_SECRET;
-const redirect_uri = 'http://127.0.0.1:3000/auth/callback';
+const redirect_uri = process.env.REDIRECT_URI;
 
 // REDIRECT TO GOOGLE OAUTH 2.0 SERVER
 router.get('/login', (req, res, next) => {

@@ -33,6 +33,7 @@ app.use('/auth', require('./routes/auth'));
 app.use('/profile', require('./routes/profile'));
 app.use('/stories', require('./routes/story'));
 app.use(require('./routes/error'));
+
 const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Listening on ${port}`);
