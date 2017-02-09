@@ -73,7 +73,8 @@
 
 
 <p>Welcome, {{user.displayName}}</p>
-<div><img src='{{user.image.url}}'></div>
+<div id='avatar'><img src='{{user.image.url}}'></div>
+<div id='email'>{{user.email}}</div>
 <a href='/auth/logout'>Logout</a>
 
 
@@ -90,7 +91,7 @@
       <article class="media">
         <figure class="media-center">
           <p class="image">
-            <img src="{{img_url}}">
+            <img src="{{img_url}}" id="imgurl">
           </p>
         </figure>
       </article>

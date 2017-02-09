@@ -32,7 +32,7 @@ router.get('/me', (req, res, next) => {
       }
     })
       console.log('rsu=', user);
-    return res.redirect('/profile')
+      return res.render('index', {user})
   })
 });
 
