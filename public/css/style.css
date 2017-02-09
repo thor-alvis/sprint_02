@@ -104,7 +104,8 @@ p {
 #publish {
   background: #4A43FC;
   color: #FFFFF2;
-  /*margin: 10px;*/
+  margin-top: -40px;
+  margin-right: 30px;
   padding: 8px;
   font-size: 18px;
   text-align: center;
