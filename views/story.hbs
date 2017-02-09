@@ -1,3 +1,69 @@
+<!-- HEADER -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        storrry
+      </h1>
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <nav class="nav">
+      <div class="nav-right nav-menu">
+        {{#if user}}
+
+        <div class="nav-item" id="avatar"><img src='{{user.image.url}}'></div>
+
+        <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
+
+        <span class="nav-item">
+          <a class="button is-white" id="create" >
+            <span class="icon">
+              <i class="fa fa-plus"></i>
+            </span> create
+          </a>
+        </span>
+
+
+        <span class="nav-item">
+          <a class="button is-white" href='/auth/logout' >
+            <span class="icon">
+              <i class="fa fa-sign-out"></i>
+            </span> logout
+          </a>
+        </span>
+
+        {{else}}
+
+        <span class="nav-item">
+          <a class="button is-white" href='/auth/login' >
+            <span class="icon">
+              <i class="fa fa-sign-in"></i>
+            </span> login
+          </a>
+        </span>
+
+        {{/if}}
+      </div>
+    </nav>
+
+
+  </div>
+</section>
+
+
+
+
+
 <!-- CONTENT -->
   <div class="columns">
 

@@ -1,17 +1,28 @@
 /*DRAGULA*/
-@import 'node_modules/dragula/dragula'
+@import 'node_modules/dragula/dragula';
 
 
 
-span {
+a {
   color: black;
+  background: #FFFFF2;
 }
 
 h1 {
-  font-size: 50px;
   text-align: center;
 }
 
+.hero,  .title, .hero-body, .container {
+  font-family: 'Montserrat', sans-serif;
+  background: #FFFFF2;
+  font-weight: 700;
+  font-size: 150px;
+  letter-spacing: 10px;
+}
+
+.nav-item {
+  display: block;
+}
 
 .button {
   display: block;
@@ -46,7 +57,7 @@ h1 {
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #FFFFF2
+  background: #FFFFF2;
 }
 
 #createStory {
