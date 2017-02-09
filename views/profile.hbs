@@ -1,7 +1,7 @@
 <h1>Profile Page</h1>
 
-{{!-- Display User Information --}}
-<p>Welcome, {{user.displayName}}</p>
-<div><img src='{{user.image.url}}'></div>
 {{!-- Display a link to logout --}}
+<p>Welcome, {{user.displayName}}</p>
+<div id='avatar'><img src='{{user.image.url}}'></div>
+<div id='email'>{{user.email}}</div>
 <a href='/auth/logout'>Logout</a>

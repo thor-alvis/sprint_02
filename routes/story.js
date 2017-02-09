@@ -5,12 +5,13 @@ const Profile = require('../models/profile');
 
 
 router.get('/', (req,res,next) =>{
-  Profile.find({}, function (err, data) {
+  Profile.find({}, function (err, user) {
     if (err) {
       next(err)
     } else {
-       console.log('data', data);
-    res.render('index',{data: data}); //list of all stories
+      const user = req.session.user;
+      console.log('user', user);
+    res.render('index', {user: user}); //list of all stories
     }
   })
 });

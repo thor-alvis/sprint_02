@@ -28,12 +28,37 @@
     </a> -->
 
     <span class="nav-item">
+
+
       <a class="button is-primary" href='/auth/login'>
         <span class="icon">
           <i class="fa fa-login"></i>
         </span>
         <span>Login</span>
       </a>
+
+
+        <span class="icon">
+          <i class="fa fa-login"></i>
+        </span>
+        <span id="avatar"><img src='{{user.image.url}}'></span>
+
+
+
+        <span class="icon">
+          <i class="fa fa-login"></i>
+        </span>
+        <span id="email">{{user.email}}</span>
+
+
+      <a class="button is-primary" href='/stories/new'>
+        <span class="icon">
+          <i class="fa fa-login"></i>
+        </span>
+        <span id="create">Create</span>
+      </a>
+
+
     </span>
   </div>
 </nav>
@@ -46,6 +71,9 @@
  --}}
 
 
+
+<div id='avatar'><img src='{{user.image.url}}'></div>
+<div id='email'>{{user.email}}</div>
 
 
 
@@ -60,10 +88,10 @@
 
             <p class="image"> IMG
               <!-- <img src="{{img_url}}"> -->
-           
-           //brad and kris test
+
+         {{!--   //brad and kris test
             //<p class="image">
-              //<img id='storypost' src="{{img_url}}">
+              //<img id='storypost' src="{{img_url}}"> --}}
             </p>
           </figure>
         </article>
