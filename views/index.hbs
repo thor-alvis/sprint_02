@@ -19,26 +19,27 @@
           <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
 
           <div class="nav-item">
-            <a class="button is-white" id="create" >
-              <span class="icon">
-                <i class="fa fa-plus"></i>
-              </span> create
-            </a>
-          </div>
-
-
-          <div class="nav-item">
-            <a class="button is-white" href='/auth/logout' >
+            <a class="button" href='/auth/logout' >
               <span class="icon">
                 <i class="fa fa-sign-out"></i>
-              </span> logout
+              </span>
             </a>
           </div>
+
+          <div class="nav-item">
+            <a class="button" id="create" >
+              <span class="icon">
+                <i class="fa fa-plus"></i>
+              </span>
+            </a>
+          </div>
+
+
 
           {{else}}
 
           <div class="nav-item">
-            <a class="button is-white" href='/auth/login' >
+            <a class="button" href='/auth/login' >
               <span class="icon">
                 <i class="fa fa-sign-in"></i>
               </span> login
