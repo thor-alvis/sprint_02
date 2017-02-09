@@ -6,7 +6,7 @@ const Profile = require('../models/profile')
 router.get('/', (req, res, next) => {
   const user = req.session.user;
   console.log('PROFILE.JS > user ===> ', user);
-  res.render('profile', {user});
+  res.render('index', {user});
 });
 
 router.get('/me', (req, res, next) => {
@@ -32,14 +32,15 @@ router.get('/me', (req, res, next) => {
       }
     })
       console.log('rsu=', user);
-    res.redirect('/');
+
+       res.redirect('/stories')
   })
 });
 
 
 router.get('/:id', (req,res,next) => {
   // grab profile of specific user
-  res.render('profile');
+  res.render('index');
 });
 
 router.get('/:id/edit', (req,res,next) => {
