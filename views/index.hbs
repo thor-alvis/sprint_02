@@ -23,7 +23,7 @@
 
         <div class="nav-item" id="avatar"><img src='{{user.image.url}}'></div>
 
-        <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
+        <!-- <a class="nav-item" id="{{email}}">{{user.displayName}}</a> -->
 
         <span class="nav-item">
           <a class="button is-white" id="create" >
@@ -44,12 +44,14 @@
 
         {{else}}
 
-        <a class="nav-item button" href='/auth/login'>
-          <span class="icon">
-            <i class="fa fa-login"></i>
-          </span>
-          <span>Login</span>
-        </a>
+        <span class="nav-item">
+          <a class="button is-white" href='/auth/login' >
+            <span class="icon">
+              <i class="fa fa-sign-in"></i>
+            </span>
+          </a>
+        </span>
+
         {{/if}}
       </div>
     </nav>

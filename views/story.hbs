@@ -1,17 +1,5 @@
-<!-- HEADER -->
-<section class="hero">
-  <div class="hero-body">
-    <div class="container">
-      <h1 class="title">
-        Primary title
-      </h1>
-    </div>
-  </div>
-</section>
-
-
 <!-- CONTENT -->
-<div class="container">
+<div class="container" id="createStory">
   <div class="columns">
 
     <div class="column"></div>
@@ -44,9 +32,9 @@
           <div class="words" id="word9" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words9}}</div>
           <div class="words" id="word10" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words10}}</div>
 
-          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)">CAPTION : </div>
+          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)"><p id="caption">CAPTION:<p></div>
 
-          <br><button class="button is-primary" id="publish">Publish</button>
+          <br><button class="button" id="publish">Publish</button>
 
         </div>
       </div>

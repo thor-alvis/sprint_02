@@ -1,6 +1,8 @@
 /*DRAGULA*/
 @import 'node_modules/dragula/dragula'
 
+
+
 span {
   color: black;
 }
@@ -9,9 +11,11 @@ h1 {
   font-size: 50px;
   text-align: center;
 }
-.nav-item{
+
+.button {
   display: block;
 }
+
 .column {
   /*border: 5px solid red;*/
 }
@@ -27,22 +31,38 @@ h1 {
   width: 100%;
 }
 
+.content-media{
+  /*float: left;*/
+}
+
 .content-text {
   /*background: red;*/
-  width: 100%;
+  /*float: right;*/
+  /*width: 60%;*/
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #FFFFF2
+}
+
+#createStory {
+  background: #FFFFF2
 }
 
 /*DRAGULA DRAG AND DROP ====================================================*/
 .words {
     display:inline-block;
-    background-color: #FFF3CC;
+    /*background-color: #4A43FC;*/
+    border: 1px solid #4A43FC;
+    color: #000003;
     margin: 10px;
     padding: 8px;
     font-size: 18px;
     text-align: center;
+    font-weight: 700;
     /*cursor: move;*/
 }
 
@@ -51,7 +71,7 @@ h1 {
 }
 
 #drop-zone {
-    border: black 1px solid;
+    border: 1px solid #4A43FC;
     padding: 8px;
     font-size: 18px;
 }
