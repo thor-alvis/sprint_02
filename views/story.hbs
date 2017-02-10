@@ -1,0 +1,91 @@
+<!-- HEADER -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title"><a href="/">
+        storrry
+        <a>
+      </h1>
+      <!-- NAV -->
+      <nav class="nav">
+        <div class="nav-right nav-menu">
+          {{#if user}}
+          <div class="nav-item" id="avatar"><a href ='/profiles/{{user.id}}'><img src='{{user.image.url}}'></a></div>
+          <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
+          <div class="nav-item">
+            <a class="button" href='/auth/logout' >
+              <span class="icon">
+                <i class="fa fa-sign-out"></i>
+              </span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="button" id="create" href="/stories/new">
+              <span class="icon">
+                <i class="fa fa-plus"></i>
+              </span>
+            </a>
+          </div>
+          {{else}}
+          <div class="nav-item">
+            <a class="button" href='/auth/login' >
+              <span class="icon">
+                <i class="fa fa-sign-in"></i>
+              </span> login
+            </a>
+          </div>
+          {{/if}}
+        </div>
+      </nav>
+      <!-- NAV END -->
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- CONTENT -->
+  <div class="columns">
+
+    <div class="column"></div>
+
+    <div class="column is-half">
+      <div class="content">
+        <div class="content-media">
+          <article class="media">
+            <figure class="media-center">
+              <p class="image">
+                 <img id="imgurl" src="{{img_url}}">
+              </p>
+            </figure>
+          </article>
+        </div>
+
+
+        <div class="content-text">
+
+          <h2 id="app-status"></h2>
+
+          <div class="words" id="word1" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words1}}</div>
+          <div class="words" id="word2" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words2}}</div>
+          <div class="words" id="word3" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words3}}</div>
+          <div class="words" id="word4" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words4}}</div>
+          <div class="words" id="word5" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words5}}</div>
+          <div class="words" id="word6" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words6}}</div>
+          <div class="words" id="word7" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words7}}</div>
+          <div class="words" id="word8" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words8}}</div>
+          <div class="words" id="word9" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words9}}</div>
+          <div class="words" id="word10" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words10}}</div>
+
+          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)"></div>
+
+          <br><button class="button is-small" id="publish">publish</button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="column"></div>
+  </div>
