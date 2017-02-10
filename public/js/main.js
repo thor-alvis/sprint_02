@@ -13,9 +13,11 @@ $(document).ready(function(){
       caption: allCaption,
       img_url: imgurl
     }
-    $.post('/stories', {data: data}, function(res){
-    })
-  })
+    $.post('/stories', {data: data}, function(res) {
+       window.location.pathname = '/';
+    });
+  });
+
   const $deleteBtn = $('.delete');
   $deleteBtn.on('click', function(event) {
     $.ajax({
@@ -82,21 +84,4 @@ var caption = [];
   _('app-status').innerHTML=caption;
 };
 
-// brad's and kris main.js testing
-//  var imgdata = $('#storypost').attr('src');
-//  console.log('imgdata =', imgdata);
-//  var data = {
-//         imgdata: imgdata
-//  }
 
-// $('#submit').on('click', (evt) => {
-//   console.log('clicked');
-//   // console.log('imgdata = ', imgdata);
-//   $.post('/stories', data, (err,response) => {
-//     console.log('response=', response);
-
-
-//   })
-// })
-
-//
