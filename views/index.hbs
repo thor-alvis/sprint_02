@@ -6,19 +6,16 @@
         storrry
         <a>
       </h1>
-
-
-
-
       <!-- NAV -->
       <nav class="nav">
         <div class="nav-right nav-menu">
           {{#if user}}
-
-          <div class="nav-item" id="avatar"><a href ='/profiles/{{user.id}}'><img src='{{user.image.url}}'></a></div>
-
+          <div class="nav-item" id="avatar">
+            <a href ='/profiles/{{user.id}}'>
+              <img src='{{user.image.url}}'>
+            </a>
+          </div>
           <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
-
           <div class="nav-item">
             <a class="button" href='/auth/logout' >
               <span class="icon">
@@ -26,7 +23,6 @@
               </span>
             </a>
           </div>
-
           <div class="nav-item">
             <a class="button" id="create" href="/stories/new">
               <span class="icon">
@@ -34,11 +30,7 @@
               </span>
             </a>
           </div>
-
-
-
           {{else}}
-
           <div class="nav-item">
             <a class="button" href='/auth/login' >
               <span class="icon">
@@ -46,33 +38,23 @@
               </span> login
             </a>
           </div>
-
           {{/if}}
         </div>
       </nav>
       <!-- NAV END -->
-
-
-
-
-
     </div>
-
-
-
-
   </div>
 </section>
-
-
 
 
 <!-- CONTENT -->
 {{#each story}}
 <div class="columns">
   <div class="column"></div>
-  <div class="column is-half"><img src='{{this.img_url}}'>
-    <p>{{this.caption}}</p>
+  <div class="column is-half">
+    <img class="media" src='{{this.img_url}}'>
+    <div class="caption">{{this.caption}}</div>
+    <div class="bottom"></div>
   </div>
   <div class="column"></div>
 </div>
