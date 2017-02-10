@@ -2,66 +2,43 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">
-        <a href="/stories">
-          storrry
-          <a>
+      <h1 class="title"><a href="/">
+        storrry
+        <a>
       </h1>
-
-
-
-
-
-
-
-
-
+      <!-- NAV -->
+      <nav class="nav">
+        <div class="nav-right nav-menu">
+          {{#if user}}
+          <div class="nav-item" id="avatar"><a href ='/profiles/{{user.id}}'><img src='{{user.image.url}}'></a></div>
+          <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
+          <div class="nav-item">
+            <a class="button" href='/auth/logout' >
+              <span class="icon">
+                <i class="fa fa-sign-out"></i>
+              </span>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="button" id="create" href="/stories/new">
+              <span class="icon">
+                <i class="fa fa-plus"></i>
+              </span>
+            </a>
+          </div>
+          {{else}}
+          <div class="nav-item">
+            <a class="button" href='/auth/login' >
+              <span class="icon">
+                <i class="fa fa-sign-in"></i>
+              </span> login
+            </a>
+          </div>
+          {{/if}}
+        </div>
+      </nav>
+      <!-- NAV END -->
     </div>
-
-
-    <!-- NAV -->
-    <nav class="nav">
-      <div class="nav-right nav-menu">
-        {{#if user}}
-
-   <div class="nav-item" id="avatar"><a href ='/profiles/{{user.id}}'><img src='{{user.image.url}}'></a></div>
-
-        <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
-
-        <div class="nav-item">
-          <a class="button" href='/auth/logout' >
-            <span class="icon">
-              <i class="fa fa-sign-out"></i>
-            </span>
-          </a>
-        </div>
-
-        <div class="nav-item">
-          <a class="button" id="create" href="/stories/new?" >
-            <span class="icon">
-              <i class="fa fa-plus"></i>
-            </span>
-          </a>
-        </div>
-
-
-
-        {{else}}
-
-        <div class="nav-item">
-          <a class="button" href='/auth/login' >
-            <span class="icon">
-              <i class="fa fa-sign-in"></i>
-            </span> login
-          </a>
-        </div>
-
-        {{/if}}
-      </div>
-    </nav>
-    <!-- NAV END -->
-
-
   </div>
 </section>
 

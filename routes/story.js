@@ -21,14 +21,19 @@ router.get('/', (req,res,next) =>{
 
 router.get('/new', (req,res,next) => {
   const user = req.session.user;
-  const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.GIPHY_API_KEY}`
+
+
+  const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.API_KEY}`
+
   request.get(url, (err, response, body) => {
     const img_url  = JSON.parse(body).data.image_url;
+    console.log('img_url=', JSON.parse(body).data.image_url);
     var game_words = [];
     while(game_words.length < 11) {
       var randomIndex = Math.floor(Math.random() * wordbank.length);
       game_words.push(wordbank[randomIndex]);
     }
+
     res.render('story',{img_url: img_url,
       words1: game_words[0],
       words2: game_words[1],

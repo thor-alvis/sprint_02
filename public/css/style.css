@@ -1,8 +1,6 @@
-/*DRAGULA*/
-
 a {
   color: black;
-  background: #FFFFF2;
+  /*background: #FFFFF2;*/
 }
 
 h1 {
@@ -10,16 +8,24 @@ h1 {
   display: inline-block;
 }
 
-.hero-body {
-  background: #FFFFF2;
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  letter-spacing: 10px;
+  /*text-align: center;*/
+  margin-left: 100px;
+  color: black;
 }
 
 .title {
   font-family: 'Montserrat', sans-serif;
-  background: #FFFFF2;
   font-weight: 700;
   font-size: 100px;
   letter-spacing: 10px;
+}
+.bottom {
+  height: 100px;
 }
 
 .nav,
@@ -30,21 +36,14 @@ h1 {
   box-shadow: none;
 }
 
-
 .hero .nav {
     background: 0 0;
      box-shadow: none;
 }
 
-
 .button {
   display: block;
   border: none;
-  background: #FFFFF2;
-}
-
-.column {
-  /*border: 5px solid red;*/
 }
 
 .word {
@@ -56,27 +55,17 @@ h1 {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-}
 
-.content-media{
-  /*float: left;*/
 }
 
 .content-text {
-  /*background: red;*/
-  /*float: right;*/
-  /*width: 60%;*/
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #FFFFF2;
-}
-
-#createStory {
-  background: #FFFFF2
 }
 
 p {
@@ -86,10 +75,35 @@ p {
   margin: 10px;
 }
 
+.caption {
+  /*border: 1px solid #4A43FC;
+  color: #000003;
+  margin: 30px;
+  padding: 8px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;*/
+
+
+
+  color: #000003 ;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.delete {
+  float: right;
+  margin: 10px;
+}
+
 /*DRAGULA DRAG AND DROP ====================================================*/
 .words {
     display:inline-block;
-    /*background-color: #4A43FC;*/
     border: 1px solid #4A43FC;
     color: #000003;
     margin: 10px;
@@ -97,7 +111,6 @@ p {
     font-size: 18px;
     text-align: center;
     font-weight: 700;
-    /*cursor: move;*/
 }
 
 #publish {
@@ -110,10 +123,6 @@ p {
   text-align: center;
   font-weight: 700;
   float: right;
-}
-
-.words:hover{
-  /*animate*/
 }
 
 #drop-zone {
