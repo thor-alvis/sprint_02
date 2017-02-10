@@ -8,8 +8,9 @@ $(document).ready(function(){
     for ( let i = 0; i < _('drop-zone').children.length; i ++ ) {
       caption.push(_('drop-zone').children[i].innerHTML);
     };
+    let allCaption = caption.join(' ');
     let data = {
-      caption: caption,
+      caption: allCaption,
       img_url: imgurl
     }
     $.post('/stories', {data: data}, function(res){
