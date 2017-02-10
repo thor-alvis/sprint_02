@@ -3,30 +3,22 @@
 // ==============================================================
 $(document).ready(function(){
   $('#publish').click(function(e){
-    let $dropZone = $('#drop-zone').text();
-    let $email = $('#email').text();
-    let $imgurl = $('#imgurl').attr('src');
-    console.log('from dropZone: ', $dropZone);
-    let $caption = [];
-      for ( let i = 0; i < _('drop-zone').children.length; i ++ ) {
-        $caption.push(_('drop-zone').children[i].id);
-      };
-      console.log('caption',$caption);
-      console.log('email', $email);
-      console.log('img_url', $imgurl);
-    let $data = {
-      email: $email,
-      caption: $caption,
-      img_url: $imgurl
+    let imgurl = $('#imgurl').attr('src');
+    let caption = [];
+    for ( let i = 0; i < _('drop-zone').children.length; i ++ ) {
+      caption.push(_('drop-zone').children[i].innerHTML);
+    };
+    let data = {
+      caption: caption,
+      img_url: imgurl
     }
-    console.log('data', $data);
-    $.post('/stories', {data: $data}, function(res){
+    $.post('/stories', {data: data}, function(res){
       const $appendContent =
       `<div class="content">
         <article class="media">
           <figure class="media-center">
             <p class="image"> IMG
-              <img src="${img_url}">
+              <img src="${imgurl}">
             </p>
           </figure>
         </article>
