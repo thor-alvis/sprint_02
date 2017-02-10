@@ -6,13 +6,15 @@ const wordbank = require('../models/wordbank');
 const Story = require('../models/story')
 
 router.get('/', (req,res,next) =>{
-  Profile.find({}, function (err, user) {
+  Story.find({}, function (err, story) {
     if (err) {
       next(err)
     } else {
+      console.log( story );
       const user = req.session.user;
+      console.log( user )
       // console.log('user', user);
-    res.render('index', {user: user}); //list of all stories
+    res.render('index', {user: user, story: story}); //list of all stories
     }
   })
 });
