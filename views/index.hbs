@@ -67,8 +67,10 @@
 
 
 <!-- CONTENT -->
+{{#each story}}
 <div class="columns">
   <div class="column"></div>
-  <div class="column is-half">feed here</div>
+  <div class="column is-half"><img src='{{this.img_url}}'>{{this.caption}}</div>
   <div class="column"></div>
 </div>
+{{/each}}
