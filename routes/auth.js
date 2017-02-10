@@ -31,22 +31,18 @@ router.get('/callback', (req, res, next) => {
     redirect_uri: redirect_uri,
     grant_type: 'authorization_code'
   };
-  console.log('AUTH.JS > form ===> ', form)
   request.post(url, {form}, (err, response, body) => {
     const data = JSON.parse(body);
-    console.log('AUTH.JS > data ===> ' + data);
     req.session.access_token = data.access_token;
-    console.log('AUTH.JS > req.session ===> ', req.session);
     if (code === undefined) {
       res.redirect('/');
     } else {
-      // deleted this 'profile/me' as per updated routes..
-
-      res.redirect('/profile/me');
+      res.redirect('/profiles/me');
     }
   });
 });
 
+// KILL SESSION AND LOGOUT USER
 router.get('/logout', (req, res) => {
   req.session.destroy( () => {
     res.redirect('/');
