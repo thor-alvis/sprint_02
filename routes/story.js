@@ -22,7 +22,7 @@ router.get('/', (req,res,next) =>{
 
 router.get('/new', (req,res,next) => {
   const user = req.session.user;
-  const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.APIKEY}`
+  const url = `http://api.giphy.com/v1/gifs/random?api_key=${process_.env.API_KEY}`
   request.get(url, (err, response, body) => {
     const img_url  = JSON.parse(body).data.image_url;
     console.log('img_url=', JSON.parse(body).data.image_url);
