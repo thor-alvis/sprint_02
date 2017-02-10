@@ -8,25 +8,12 @@ $(document).ready(function(){
     for ( let i = 0; i < _('drop-zone').children.length; i ++ ) {
       caption.push(_('drop-zone').children[i].innerHTML);
     };
+    let allCaption = caption.join(' ');
     let data = {
-      caption: caption,
+      caption: allCaption,
       img_url: imgurl
     }
     $.post('/stories', {data: data}, function(res){
-      // const $appendContent =
-      // `<div class="content">
-      //   <article class="media">
-      //     <figure class="media-center">
-      //       <p class="image"> IMG
-      //         <img src="${imgurl}">
-      //       </p>
-      //     </figure>
-      //   </article>
-      //   <div class="content-text">
-      //     ${caption}
-      //   </div>
-      // </div>`
-      // $('.content').append($appendContent);
     })
   })
   const $deleteBtn = $('.delete');
