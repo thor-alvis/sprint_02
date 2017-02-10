@@ -29,7 +29,20 @@ $(document).ready(function(){
       $('.content').append($appendContent);
     })
   })
+  const $deleteBtn = $('.delete');
+  $deleteBtn.on('click', function(event) {
+    $.ajax({
+      url: '/stories/' + event.target.id,
+      type: 'DELETE',
+      success: function(res) {
+        event.target.parentElement.remove();
+      }
+    })
+  })
 })
+
+
+
 
 // ==============================================================
 // DRAGULA - DRAG AND DROP
