@@ -1,5 +1,5 @@
 function setup() {
-  var canvas = createCanvas(300, 300);
+  var canvas = createCanvas(windowWidth/2, windowHeight);
   strokeWeight(7);
 
   // Move the canvas so it's inside our <div id="sketch-holder">.
