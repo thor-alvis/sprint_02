@@ -13,6 +13,7 @@ router.get('/', (req,res,next) =>{
       // console.log( 'Index Feed Story ==>', story );
       const user = req.session.user;
       console.log( 'user ===>', user )
+      story = story.reverse();
       res.render('index', {user: user, story: story}); //list of all stories
     }
   })
