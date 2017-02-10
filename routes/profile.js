@@ -42,17 +42,11 @@ router.get('/:id', (req,res,next) => {
     if (err) {
       next (err)
     } else {
-      Story.find({}, function (err, story) {
-        if (err) {
-          next(err)
-        } else {
-          console.log( 'story ==>', story );
-          res.render('profile', {user: user, story: story}); //list of all stories
-        }
-      })
-    res.render('profile', {user: user});
+      let story = profile.stories
+      console.log( 'profile page story ==>', story );
     }
   })
+  res.render('profile', {user: user});
 });
 
 module.exports = router;
