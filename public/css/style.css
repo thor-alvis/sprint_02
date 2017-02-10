@@ -2,7 +2,7 @@
 
 a {
   color: black;
-  background: #FFFFF2;
+  /*background: #FFFFF2;*/
 }
 
 h1 {
@@ -11,12 +11,12 @@ h1 {
 }
 
 .hero-body {
-  background: #FFFFF2;
+  /*background: #FFFFF2;*/
 }
 
 .title {
   font-family: 'Montserrat', sans-serif;
-  background: #FFFFF2;
+  /*background: #FFFFF2;*/
   font-weight: 700;
   font-size: 100px;
   letter-spacing: 10px;
@@ -40,7 +40,7 @@ h1 {
 .button {
   display: block;
   border: none;
-  background: #FFFFF2;
+  /*background: #FFFFF2;*/
 }
 
 .column {
@@ -72,11 +72,11 @@ h1 {
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #FFFFF2;
+  /*background: #FFFFF2;*/
 }
 
 #createStory {
-  background: #FFFFF2
+  /*background: #FFFFF2*/
 }
 
 p {
