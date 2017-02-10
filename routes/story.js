@@ -24,13 +24,14 @@ router.get('/new', (req,res,next) => {
     console.log('body 1', JSON.parse(body));
     console.log('body 2', JSON.parse(body).data.image_url);
     const img_url  = JSON.parse(body).data.image_url;
+    console.log('img_url=', JSON.parse(body).data.image_url);
     var game_words = [];
     // var word = wordbank[randomIndex];
     while(game_words.length < 11){
     var randomIndex = Math.floor(Math.random() * wordbank.length);
     game_words.push(wordbank[randomIndex]);
     }
-    console.log(game_words);
+    console.log('game_words=', game_words);
     res.render('story',{img_url: img_url,
       words1: game_words[0],
       words2: game_words[1],
