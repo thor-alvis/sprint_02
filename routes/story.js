@@ -85,14 +85,15 @@ router.get('/:id', (req,res,next) => {
 
 router.delete('/:id', (req,res,next) => {
   var id = req.params.id;
+  const user = req.session.user;
   Story.findByIdAndRemove(id, (err, story) => {
     if(err) {
       console.log(err);
     } else {
       console.log('story deleted');
     }
+  res.render('index', {user: user, story: story} );
   })
-  res.redirect('/');
 })
 
 
