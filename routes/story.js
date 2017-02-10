@@ -10,9 +10,9 @@ router.get('/', (req,res,next) =>{
     if (err) {
       next(err)
     } else {
-      // console.log( 'Index Feed Story ==>', story );
       const user = req.session.user;
       console.log( 'user ===>', user )
+      story = story.reverse();
       res.render('index', {user: user, story: story}); //list of all stories
     }
   })
@@ -22,7 +22,9 @@ router.get('/', (req,res,next) =>{
 router.get('/new', (req,res,next) => {
   const user = req.session.user;
 
+
   const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.API_KEY}`
+
   request.get(url, (err, response, body) => {
     const img_url  = JSON.parse(body).data.image_url;
     console.log('img_url=', JSON.parse(body).data.image_url);
@@ -81,7 +83,6 @@ router.get('/all', (req, res, next) => {
 
 
 router.get('/:id', (req,res,next) => {
-  // get other users stories
   var id = req.params.id;
   Story.findById(id, (err, story) => {
     if (err) {

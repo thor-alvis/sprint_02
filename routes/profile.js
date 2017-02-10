@@ -4,7 +4,7 @@ const router = express.Router();
 const Profile = require('../models/profile')
 const Story = require('../models/story')
 
-router.get('/', (req, res, next) => {
+router.get('/all', (req, res, next) => {
   Profile.find({}).exec().then(profiles => {
     res.json(profiles)
   })
@@ -48,12 +48,4 @@ router.get('/:id', (req,res,next) => {
 module.exports = router;
 
 
-// router.get('/:id/edit', (req,res,next) => {
-//   // display fields to edit
-//   res.render('edit');
-// });
 
-// router.put('/:id', (req,res,next) => {
-//   // update profile in mongo
-//   res.redirect('/:id')   // either redirect or render.
-// })
