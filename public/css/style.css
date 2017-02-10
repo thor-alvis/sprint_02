@@ -120,4 +120,5 @@ p {
     border: 1px solid #4A43FC;
     padding: 8px;
     font-size: 18px;
+     min-height: 100px;
 }
