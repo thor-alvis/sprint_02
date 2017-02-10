@@ -14,9 +14,13 @@ On the main page all of the user contributions will be displayed
 
 
 Technologies used:
-Used MongoDB to store it, mongoose to make models and access the data
+Used MongoDB to store it, Mongoose to make models and access the data
 Dragula to enable drag and drop
 Waffle IO to plan and assign tasks
+-https://waffle.io/thor-alvis/sprint_02
+Google OAuth
+GIPHY API
+-http://api.giphy.com/v1/gifs/random?api_key
 
 
 
