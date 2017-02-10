@@ -105,7 +105,7 @@ router.delete('/:id', (req,res,next) => {
     }
   res.render('index', {user: user, story: story} );
   })
-})
+});
 
 
 
