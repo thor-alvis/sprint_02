@@ -50,8 +50,10 @@
 {{#each user.stories}}
 <div class="columns">
   <div class="column"></div>
-  <div class="column is-half"><img src='{{this.img_url}}'>{{this.caption}}
+  <div class="column is-half">
     <button id="{{this._id}}" class="delete" type="submit"></button>
+    <img class="media" src='{{this.img_url}}'>
+    <p class="caption">{{this.caption}}</p>
   </div>
   <div class="column"></div>
 </div>
