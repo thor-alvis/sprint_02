@@ -10,11 +10,10 @@ router.get('/', (req,res,next) =>{
     if (err) {
       next(err)
     } else {
-      console.log( story );
+      // console.log( 'story ==>', story );
       const user = req.session.user;
-      console.log( user )
-      // console.log('user', user);
-    res.render('index', {user: user, story: story}); //list of all stories
+      // console.log( 'user ===>', user )
+      res.render('index', {user: user, story: story}); //list of all stories
     }
   })
 });
@@ -22,7 +21,7 @@ router.get('/', (req,res,next) =>{
 
 router.get('/new', (req,res,next) => {
   const user = req.session.user;
-  const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.APIKEY}`
+  const url = `http://api.giphy.com/v1/gifs/random?api_key=${process.env.API_KEY}`
   request.get(url, (err, response, body) => {
     const img_url  = JSON.parse(body).data.image_url;
     var game_words = [];
@@ -51,7 +50,7 @@ router.post('/', (req,res,next) => {
   // this is going to go to mongo -- share button
 
   const email = req.session.user.emails[0].value;
-  var img_url = req.body.data.img_url;
+  const img_url = req.body.data.img_url;
   const caption = req.body.data.caption;
   Promise.all([
     Profile.findOne({email: email}).exec(),
@@ -70,6 +69,14 @@ router.post('/', (req,res,next) => {
   .catch(next)
 });
 
+
+router.get('/all', (req, res, next) => {
+  Story.find({}).exec().then(stories => {
+    res.json(stories)
+  })
+})
+
+
 router.get('/:id', (req,res,next) => {
   // get other users stories
   var id = req.params.id;
@@ -84,7 +91,7 @@ router.get('/:id', (req,res,next) => {
 });
 
 router.delete('/:id', (req,res,next) => {
-  var id = req.params.id;
+  const id = req.params.id;
   const user = req.session.user;
   Story.findByIdAndRemove(id, (err, story) => {
     if(err) {

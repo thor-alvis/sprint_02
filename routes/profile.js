@@ -2,11 +2,12 @@ const express = require('express');
 const request = require('request');
 const router = express.Router();
 const Profile = require('../models/profile')
+const Story = require('../models/story')
 
 router.get('/', (req, res, next) => {
-  const user = req.session.user;
-  console.log('PROFILE.JS > user ===> ', user);
-  res.render('index', {user});
+  Profile.find({}).exec().then(profiles => {
+    res.json(profiles)
+  })
 });
 
 router.get('/me', (req, res, next) => {
@@ -17,43 +18,52 @@ router.get('/me', (req, res, next) => {
     url: url,
     headers: { 'authorization' : `Bearer ${access_token}`}
   }
-  console.log('PROFILE.JS > options ===>', options);
   request(options, (err, response, body) => {
     const user = JSON.parse(body);
     req.session.user = user;
     Profile.findOne({"email": user.emails[0].value}, (err,profile)=> {
       if(!profile){
-      var profile1 = new Profile({
-           displayName: user.displayName,
-           email: user.emails[0].value
-           // avatar: user.image
-          })
-          profile1.save()
+        var profile1 = new Profile({
+          displayName: user.displayName,
+          email: user.emails[0].value,
+          id: user.id
+        })
+        profile1.save()
       }
-    })
-       res.redirect('/stories')
-  })
+    });
+    res.redirect('/stories');
+  });
 });
-
-router.get('/all', (req, res, next) => {
-  Profile.find({}).exec().then(profiles => {
-    res.json(profiles)
-  })
-})
 
 router.get('/:id', (req,res,next) => {
-  // grab profile of specific user
-  res.render('index');
+  const id = req.params.id;
+  const user = req.session.user;
+  Profile.findOne({"id": id}, (err, profile) => {
+    if (err) {
+      next (err)
+    } else {
+      Story.find({}, function (err, story) {
+        if (err) {
+          next(err)
+        } else {
+          console.log( 'story ==>', story );
+          res.render('profile', {user: user, story: story}); //list of all stories
+        }
+      })
+    res.render('profile', {user: user});
+    }
+  })
 });
-
-router.get('/:id/edit', (req,res,next) => {
-  // display fields to edit
-  res.render('edit');
-});
-
-router.put('/:id', (req,res,next) => {
-  // update profile in mongo
-  res.redirect('/:id')   // either redirect or render.
-})
 
 module.exports = router;
+
+
+// router.get('/:id/edit', (req,res,next) => {
+//   // display fields to edit
+//   res.render('edit');
+// });
+
+// router.put('/:id', (req,res,next) => {
+//   // update profile in mongo
+//   res.redirect('/:id')   // either redirect or render.
+// })

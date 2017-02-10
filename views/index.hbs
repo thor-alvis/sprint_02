@@ -14,7 +14,7 @@
         <div class="nav-right nav-menu">
           {{#if user}}
 
-          <div class="nav-item" id="avatar"><img src='{{user.image.url}}'></div>
+          <div class="nav-item" id="avatar"><a href ='/profiles/{{user.id}}'><img src='{{user.image.url}}'></a></div>
 
           <a class="nav-item" id="{{email}}">{{user.displayName}}</a>
 
