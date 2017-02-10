@@ -40,6 +40,7 @@ router.get('/:id', (req,res,next) => {
   const id = req.params.id;
   const user = req.session.user;
   Profile.findOne({"id": id}).populate("stories").exec().then(profile => {
+    console.log('user', user)
     res.render('profile', {user: profile});
   }).catch(next)
 });

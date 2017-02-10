@@ -12,7 +12,7 @@ router.get('/', (req,res,next) =>{
     } else {
       // console.log( 'Index Feed Story ==>', story );
       const user = req.session.user;
-      // console.log( 'user ===>', user )
+      console.log( 'user ===>', user )
       res.render('index', {user: user, story: story}); //list of all stories
     }
   })
