@@ -45,21 +45,7 @@ router.get('/:id', (req,res,next) => {
   }).catch(next)
 });
 
-// router.get('/all', (req, res, next) => {
-//   Profile.find({}).exec().then(profile => {
-//     res.json(profile)
-//   })
-// })
-
 module.exports = router;
 
 
-// router.get('/:id/edit', (req,res,next) => {
-//   // display fields to edit
-//   res.render('edit');
-// });
 
-// router.put('/:id', (req,res,next) => {
-//   // update profile in mongo
-//   res.redirect('/:id')   // either redirect or render.
-// })
