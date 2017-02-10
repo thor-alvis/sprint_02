@@ -31,12 +31,15 @@ router.get('/me', (req, res, next) => {
           profile1.save()
       }
     })
-      console.log('rsu=', user);
-
        res.redirect('/stories')
   })
 });
 
+router.get('/all', (req, res, next) => {
+  Profile.find({}).exec().then(profiles => {
+    res.json(profiles)
+  })
+})
 
 router.get('/:id', (req,res,next) => {
   // grab profile of specific user

@@ -35,7 +35,7 @@
         </div>
 
         <div class="nav-item">
-          <a class="button" id="create" >
+          <a class="button" id="create" href="/stories/new?" >
             <span class="icon">
               <i class="fa fa-plus"></i>
             </span>
@@ -50,7 +50,7 @@
           <a class="button" href='/auth/login' >
             <span class="icon">
               <i class="fa fa-sign-in"></i>
-            </span> logout
+            </span> login
           </a>
         </div>
 
@@ -78,7 +78,7 @@
           <article class="media">
             <figure class="media-center">
               <p class="image">
-                 <img src="{{img_url}}">
+                 <img id="imgurl" src="{{img_url}}">
               </p>
             </figure>
           </article>
@@ -100,7 +100,7 @@
           <div class="words" id="word9" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words9}}</div>
           <div class="words" id="word10" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)">{{words10}}</div>
 
-          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)"><p>caption:<p></div>
+          <div id="drop-zone" ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="return false" ondragleave="dragLeave(event)"></div>
 
           <br><button class="button is-small" id="publish">publish</button>
 
