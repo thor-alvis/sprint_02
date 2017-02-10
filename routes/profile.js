@@ -4,7 +4,7 @@ const router = express.Router();
 const Profile = require('../models/profile')
 const Story = require('../models/story')
 
-router.get('/', (req, res, next) => {
+router.get('/all', (req, res, next) => {
   Profile.find({}).exec().then(profiles => {
     res.json(profiles)
   })
@@ -44,6 +44,12 @@ router.get('/:id', (req,res,next) => {
     res.render('profile', {user: profile});
   }).catch(next)
 });
+
+// router.get('/all', (req, res, next) => {
+//   Profile.find({}).exec().then(profile => {
+//     res.json(profile)
+//   })
+// })
 
 module.exports = router;
 
