@@ -21,6 +21,7 @@ router.get('/me', (req, res, next) => {
   request(options, (err, response, body) => {
     const user = JSON.parse(body);
     req.session.user = user;
+    console.log('USER ++>', user)
     Profile.findOne({"email": user.emails[0].value}, (err,profile)=> {
       if(!profile){
         var profile1 = new Profile({
@@ -38,15 +39,9 @@ router.get('/me', (req, res, next) => {
 router.get('/:id', (req,res,next) => {
   const id = req.params.id;
   const user = req.session.user;
-  Profile.findOne({"id": id}, (err, profile) => {
-    if (err) {
-      next (err)
-    } else {
-      let story = profile.stories
-      console.log( 'profile page story ==>', story );
-    }
-  })
-  res.render('profile', {user: user});
+  Profile.findOne({"id": id}).populate("stories").exec().then(profile => {
+    res.render('profile', {user: profile});
+  }).catch(next)
 });
 
 module.exports = router;
