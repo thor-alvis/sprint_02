@@ -27,6 +27,8 @@ In this web app the user has the ability to caption gifs and publish their newly
 
 ###WIREFRAMES
 
+Prototype: https://pr.to/75BJPE/
+
 ![](assets/assets1.png?raw=true)
 ![](assets/assets2.png?raw=true)
 ![](assets/assets3.png?raw=true)
@@ -49,10 +51,10 @@ In this web app the user has the ability to caption gifs and publish their newly
 
 ###TEAM MEBERS
 
-Brad Morgan: Database Manager
-Dakotah Walker: Product Manager
-Kristopher Parrillo: SCRUM Master
-Abi Munoz: Designer + UI/UX
+- Brad Morgan: Database Manager
+- Dakotah Walker: Product Manager
+- Kristopher Parrillo: SCRUM Master
+- Abi Munoz: Designer + UI/UX
 
 
      
